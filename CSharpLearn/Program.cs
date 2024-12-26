@@ -44,7 +44,7 @@ internal class Program
 
         ///////////////////////////////////////////////////
         // PersonRec
-        PersonRecTest.runTest();
+        PersonRecTest.RunTest();
 
         // Constants
         ConstantsTest.RunTest();
@@ -69,7 +69,13 @@ internal class Program
         int i = s.WordCount();
         Console.WriteLine($"Word count: {i}");
 
-        // WorkItem
+        // Inheritance - WorkItem
         WorkItemTest.RunTest();
+
+        // Polymorphism 
+        ShapeTest.RunTest();
+
+        // Pattern matching
+        PatternChecking.RunTest();
     }
 }

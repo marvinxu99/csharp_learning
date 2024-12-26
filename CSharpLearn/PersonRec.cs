@@ -10,7 +10,7 @@ public record PersonRec2(string FirstName, string LastName)
 
 public class PersonRecTest
 {
-    public static void runTest()
+    public static void RunTest()
     {
         // PersonRec
         {
