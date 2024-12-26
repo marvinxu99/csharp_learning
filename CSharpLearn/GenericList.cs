@@ -19,8 +19,9 @@ public class GenericList<T>
     // T as parameter type.
     public void AddHead(T t)
     {
-        var n = new Node(t);
-        n.Next = head;
+        //var n = new Node(t);
+        //n.Next = head;
+        var n = new Node(t) { Next = head };
         head = n;
     }
 
