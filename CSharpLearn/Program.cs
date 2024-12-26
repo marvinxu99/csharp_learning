@@ -2,6 +2,7 @@
 
 namespace CSharpLearn;
 
+using ExtensionMethods;
 
 internal class Program
 {
@@ -54,5 +55,21 @@ internal class Program
 
         // Generic Delegate
         GenericDelegateTest.RunTest();
+
+        // Anonymous Type
+        var v = new { Amount = 108, Message = "Hello" };
+
+        // Rest the mouse pointer over v.Amount and v.Message in the following
+        // statement to verify that their inferred types are int and string.
+        Console.WriteLine(v.Amount + v.Message);
+        Console.WriteLine(v);
+
+        // Extension Method
+        string s = "Hello Extension Methods";
+        int i = s.WordCount();
+        Console.WriteLine($"Word count: {i}");
+
+        // WorkItem
+        WorkItemTest.RunTest();
     }
 }
