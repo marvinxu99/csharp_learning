@@ -50,6 +50,7 @@ internal class Program
 
         // Generics
         GenericsTest.RunTest();
+        GenericListTest.RunTest();
 
         // Generic Delegate
         GenericDelegateTest.RunTest();

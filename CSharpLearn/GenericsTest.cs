@@ -4,7 +4,7 @@ public class GenericsTest
 {
     public static void RunTest()
     {
-        List<int> list = new();
+        var list = new List<int>();
 
         // Add ten int values.
         for (int x = 0; x < 10; x++)
