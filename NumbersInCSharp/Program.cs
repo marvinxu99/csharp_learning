@@ -1,7 +1,24 @@
 ﻿
 //WorkWithIntegers();
 
-WorkWithDecimals();
+//WorkWithDecimals();
+
+var x = 0;
+Console.WriteLine($"x = {x}");
+
+System.Int32 y = 1;
+Console.WriteLine($"y = {y}");
+
+// Declaration with initializers (four examples):
+char firstLetter = 'C';
+var limit = 3;
+int[] source = [0, 1, 2, 3, 4, 5];
+var query = from item in source
+            where item <= limit
+            select item;
+
+Console.WriteLine(string.Join(", ", query));
+
 
 
 void WorkWithDecimals()
