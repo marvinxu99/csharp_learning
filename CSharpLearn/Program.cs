@@ -77,5 +77,11 @@ internal class Program
 
         // Pattern matching
         PatternChecking.RunTest();
+
+        PatternChecking.ListPatternTest();
+
+        //Discard Test
+        DiscardTest.RunTest();
+
     }
 }
