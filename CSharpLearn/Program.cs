@@ -30,11 +30,14 @@ internal class Program
         //RunTestPart1();
 
         // Discard 
-        await DiscardTest.RunTest();
-        DiscardTest2.RunTest();
+        //await DiscardTest.RunTest();
+        //DiscardTest2.RunTest();
 
         // Deconstruct
         ExampleClassDeconstruction.RunTest();
+
+        // Extension Method
+        ExampleExtension.RunTest();
 
 
     }

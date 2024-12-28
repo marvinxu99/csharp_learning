@@ -99,7 +99,7 @@ public static class ReflectionExtensions
 
 public class ExampleExtension
 {
-    public static void Main()
+    public static void RunTest()
     {
         Type dateType = typeof(DateTime);
         PropertyInfo prop = dateType.GetProperty("Now")!;
@@ -126,6 +126,25 @@ public class ExampleExtension
             Console.WriteLine($"\n   The get accessor: {getAccessibility}");
             Console.WriteLine($"   The set accessor: {setAccessibility}");
         }
+
+        // Person
+        Type personType = typeof(Person);
+        prop = personType.GetProperty("Name",
+                                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static)!;
+
+        (hasGetAndSet, sameAccess, accessibility, getAccessibility, setAccessibility) = prop;
+        Console.Write($"\nAccessibility of the {personType.FullName}.{prop.Name} property: ");
+
+        if (!hasGetAndSet | sameAccess)
+        {
+            Console.WriteLine(accessibility);
+        }
+        else
+        {
+            Console.WriteLine($"\n   The get accessor: {getAccessibility}");
+            Console.WriteLine($"   The set accessor: {setAccessibility}");
+        }
+
     }
 }
 // The example displays the following output:
