@@ -2,8 +2,6 @@
 
 namespace CSharpLearn;
 
-using ExtensionMethods;
-
 internal class Program
 {
     static async Task Main(string[] args)
@@ -28,6 +26,21 @@ internal class Program
 
         Console.WriteLine(builder.ToString());
 
+        // Run tests
+        //RunTestPart1();
+
+        // Discard 
+        await DiscardTest.RunTest();
+        DiscardTest2.RunTest();
+
+        // Deconstruct
+        ExampleClassDeconstruction.RunTest();
+
+
+    }
+
+    private static void RunTestPart1()
+    {
 
         ///////////////////////////////////////////////////
         // Person
@@ -78,9 +91,5 @@ internal class Program
         // Pattern matching
         PatternChecking.RunTest();
         PatternChecking.ListPatternTest();
-
-        // Discard 
-        await DiscardTest.RunTest();
-
     }
 }
