@@ -6,7 +6,7 @@ using ExtensionMethods;
 
 internal class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         Console.WriteLine("Hello, World!");
 
@@ -77,11 +77,10 @@ internal class Program
 
         // Pattern matching
         PatternChecking.RunTest();
-
         PatternChecking.ListPatternTest();
 
-        //Discard Test
-        DiscardTest.RunTest();
+        // Discard 
+        await DiscardTest.RunTest();
 
     }
 }
