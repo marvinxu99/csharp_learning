@@ -1,17 +1,19 @@
-﻿//WorkWithString();
+﻿WorkWithString();
 
 List<int> fibonacciNumbers = [1, 1];
 
-var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
-var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+//var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+//var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+var previous = fibonacciNumbers[^1];
+var previous2 = fibonacciNumbers[^2];
 
 fibonacciNumbers.Add(previous + previous2);
 
 // var count = fibonacciNumbers.Count;
 while (fibonacciNumbers.Count < 20)
 {
-    var prev = fibonacciNumbers[fibonacciNumbers.Count - 1];
-    var prev2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+    var prev = fibonacciNumbers[^1];
+    var prev2 = fibonacciNumbers[^2];
 
     fibonacciNumbers.Add(prev + prev2);
 }
@@ -22,7 +24,7 @@ foreach (var item in fibonacciNumbers)
 }
 
 
-void WorkWithString()
+static void WorkWithString()
 {
     List<string> names = ["<name>", "Ana", "Felipe"];
     foreach (var name in names)
