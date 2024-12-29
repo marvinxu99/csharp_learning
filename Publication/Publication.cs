@@ -1,4 +1,6 @@
-﻿namespace Publication;
+﻿// https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/inheritance
+
+namespace Publication;
 
 public enum PublicationType { Misc, Book, Magazine, Article };
 
