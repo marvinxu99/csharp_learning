@@ -18,7 +18,8 @@ public class Square(double length) : Shape
 
     public double Side { get; } = length;
 
-    public override double Area => Math.Pow(Side, 2);
+    //public override double Area => Math.Pow(Side, 2);
+    public override double Area => Side * Side;
 
     public override double Perimeter => Side * 4;
 
