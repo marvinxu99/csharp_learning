@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shape", "Shape\Shape.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TollCalculator", "TollCalculators\TollCalculator.csproj", "{E30C1B86-9633-4B27-821B-C15EC08B0B22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOpExamples", "FileOpExamples\FileOpExamples.csproj", "{6C5663ED-B403-4D9C-9274-C2EC5379125B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{E30C1B86-9633-4B27-821B-C15EC08B0B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E30C1B86-9633-4B27-821B-C15EC08B0B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E30C1B86-9633-4B27-821B-C15EC08B0B22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

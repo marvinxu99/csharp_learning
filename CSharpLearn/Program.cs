@@ -50,6 +50,9 @@ internal class Program
         //ReflectionExample.RunTest();
         //ReflectionExample2.RunTest();
         typeof(ReflectionExample2).InspectMembers();
+
+        // Yield statement
+        YieldStatementExample.RunTest();
     }
 
     private static void RunTestPart1()
