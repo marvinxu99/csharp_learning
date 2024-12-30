@@ -33,13 +33,13 @@ catch (ArgumentNullException)
     Console.WriteLine("Caught an argument exception when using null");
 }
 
-/*  // "Add occupancy pricing"
+// "Add occupancy pricing"
 
-var soloDriver = new Car();
+var soloDriver = new Car() { Passengers = 0 };
 var twoRideShare = new Car { Passengers = 1 };
 var threeRideShare = new Car { Passengers = 2 };
 var fullVan = new Car { Passengers = 5 };
-var emptyTaxi = new Taxi();
+var emptyTaxi = new Taxi() { Fares = 0 };
 var singleFare = new Taxi { Fares = 1 };
 var doubleFare = new Taxi { Fares = 2 };
 var fullVanPool = new Taxi { Fares = 5 };
@@ -47,9 +47,9 @@ var lowOccupantBus = new Bus { Capacity = 90, Riders = 15 };
 var normalBus = new Bus { Capacity = 90, Riders = 75 };
 var fullBus = new Bus { Capacity = 90, Riders = 85 };
 
-var heavyTruck = new DeliveryTruck { GrossWeight = 7500 };
-var truck = new DeliveryTruck();    // default GrossWeight = 4000
-var lightTruck = new DeliveryTruck { GrossWeight = 2500 };
+var heavyTruck = new DeliveryTruck { GrossWeightClass = 7500 };
+//var truck = new DeliveryTruck();    // default GrossWeight = 4000
+var lightTruck = new DeliveryTruck { GrossWeightClass = 2500 };
 
 Console.WriteLine($"The toll for a solo driver is {TollCalculator.CalculateToll(soloDriver)}");
 Console.WriteLine($"The toll for a two ride share is {TollCalculator.CalculateToll(twoRideShare)}");
@@ -63,7 +63,7 @@ Console.WriteLine($"The toll for a full taxi is {TollCalculator.CalculateToll(fu
 
 Console.WriteLine($"The toll for a low-occupant bus is {TollCalculator.CalculateToll(lowOccupantBus)}");
 Console.WriteLine($"The toll for a regular bus is {TollCalculator.CalculateToll(normalBus)}");
-Console.WriteLine($"The toll for a bus is {TollCalculator.CalculateToll(fullBus)}");
+Console.WriteLine($"The toll for a full bus is {TollCalculator.CalculateToll(fullBus)}");
 
 Console.WriteLine($"The toll for a heavy truck is {TollCalculator.CalculateToll(heavyTruck)}");
 Console.WriteLine($"The toll for a medium truck is {TollCalculator.CalculateToll(truck)}");
@@ -85,9 +85,9 @@ catch (ArgumentNullException)
 {
     Console.WriteLine("Caught an argument exception when using null");
 }
-*/    // end of "Add occupancy pricing"
+// end of "Add occupancy pricing"
 
-/* // start of "Add peak pricing"
+// start of "Add peak pricing"
 Console.WriteLine("Testing the time premiums");
 
 var testTimes = new DateTime[]
@@ -108,10 +108,11 @@ foreach (var time in testTimes)
     Console.WriteLine($"Inbound premium at {time} is {TollCalculator.PeakTimePremiumFull(time, true)}");
     Console.WriteLine($"Outbound premium at {time} is {TollCalculator.PeakTimePremiumFull(time, false)}");
 }
+
 Console.WriteLine("====================================================");
 foreach (var time in testTimes)
 {
     Console.WriteLine($"Inbound premium at {time} is {TollCalculator.PeakTimePremium(time, true)}");
     Console.WriteLine($"Outbound premium at {time} is {TollCalculator.PeakTimePremium(time, false)}");
 }
-*/    // end of "Add peak pricing"
+// end of "Add peak pricing"
