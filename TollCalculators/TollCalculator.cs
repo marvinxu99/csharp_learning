@@ -107,6 +107,7 @@ public static class TollCalculator
         _ => 1.00m,
     };
 
+    // <SnippetFinalTuplePattern>
     public static decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
     (IsWeekDay(timeOfToll), GetTimeBand(timeOfToll), inbound) switch
     {
@@ -116,4 +117,24 @@ public static class TollCalculator
         (true, TimeBand.Overnight, _) => 0.75m,
         _ => 1.00m,
     };
+    // </SnippetFinalTuplePattern>
+
+    // <SnippetPremiumWithoutPattern>
+    public static decimal PeakTimePremiumIfElse(DateTime timeOfToll, bool inbound)
+    {
+        if ((timeOfToll.DayOfWeek == DayOfWeek.Saturday) ||
+            (timeOfToll.DayOfWeek == DayOfWeek.Sunday))
+        {
+            return 1.0m;
+        }
+
+        int hour = timeOfToll.Hour;
+        if (hour < 6) { return 0.75m; }
+        if (hour < 10) { return inbound ? 2.0m : 1.0m; }
+        if (hour < 16) { return 1.5m; }
+        if (hour < 20) { return inbound ? 1.0m : 2.0m; }
+        // Overnight
+        return 0.75m;
+    }
+    // </SnippetPremiumWithoutPattern>
 }

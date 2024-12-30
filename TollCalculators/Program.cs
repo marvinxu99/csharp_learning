@@ -103,6 +103,14 @@ var testTimes = new DateTime[]
     new(2019, 3, 16, 01, 30, 0), // weekend overnight
 };
 
+Console.WriteLine("====================================================");
+foreach (DateTime time in testTimes)
+{
+    Console.WriteLine($"Inbound premium at {time} is {TollCalculator.PeakTimePremiumIfElse(time, true)}");
+    Console.WriteLine($"Outbound premium at {time} is {TollCalculator.PeakTimePremiumIfElse(time, false)}");
+}
+
+Console.WriteLine("====================================================");
 foreach (var time in testTimes)
 {
     Console.WriteLine($"Inbound premium at {time} is {TollCalculator.PeakTimePremiumFull(time, true)}");
