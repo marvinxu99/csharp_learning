@@ -92,15 +92,15 @@ Console.WriteLine("Testing the time premiums");
 
 var testTimes = new DateTime[]
 {
-    new DateTime(2019, 3, 4, 8, 0, 0), // morning rush
-    new DateTime(2019, 3, 6, 11, 30, 0), // daytime
-    new DateTime(2019, 3, 7, 17, 15, 0), // evening rush
-    new DateTime(2019, 3, 14, 03, 30, 0), // overnight
+    new(2019, 3, 4, 8, 0, 0), // morning rush
+    new(2019, 3, 6, 11, 30, 0), // daytime
+    new(2019, 3, 7, 17, 15, 0), // evening rush
+    new(2019, 3, 14, 03, 30, 0), // overnight
 
-    new DateTime(2019, 3, 16, 8, 30, 0), // weekend morning rush
-    new DateTime(2019, 3, 17, 14, 30, 0), // weekend daytime
-    new DateTime(2019, 3, 17, 18, 05, 0), // weekend evening rush
-    new DateTime(2019, 3, 16, 01, 30, 0), // weekend overnight
+    new(2019, 3, 16, 8, 30, 0), // weekend morning rush
+    new(2019, 3, 17, 14, 30, 0), // weekend daytime
+    new(2019, 3, 17, 18, 05, 0), // weekend evening rush
+    new(2019, 3, 16, 01, 30, 0), // weekend overnight
 };
 
 foreach (var time in testTimes)
