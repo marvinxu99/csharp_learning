@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TollCalculator", "TollCalcu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOpExamples", "FileOpExamples\FileOpExamples.csproj", "{6C5663ED-B403-4D9C-9274-C2EC5379125B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETCoreMvcApp", "NETCoreMvcApp\NETCoreMvcApp.csproj", "{7D48868B-D579-4923-A9AE-1BC5EC7BBEB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C5663ED-B403-4D9C-9274-C2EC5379125B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D48868B-D579-4923-A9AE-1BC5EC7BBEB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D48868B-D579-4923-A9AE-1BC5EC7BBEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D48868B-D579-4923-A9AE-1BC5EC7BBEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D48868B-D579-4923-A9AE-1BC5EC7BBEB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
