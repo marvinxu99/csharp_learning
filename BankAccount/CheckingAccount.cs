@@ -26,5 +26,5 @@ public class CheckingAccount(string owner, decimal overdraftLimit = 0) : BankAcc
         CurrentBalance -= amount;
     }
 
-    public override string ToString() => $"Account ID: {AccountID}, Owner: {Owner}, Balance: {CurrentBalance}";
+    public override string ToString() => $"Owner: {Owner}, Balance: {CurrentBalance}";
 }

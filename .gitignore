@@ -84,7 +84,6 @@ obj/
 Build/
 Builds/
 MemoryCaptures/
-*.csproj
 *.pidb
 *.unityproj
 
