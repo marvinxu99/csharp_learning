@@ -53,6 +53,9 @@ internal class Program
 
         // Yield statement
         YieldStatementExample.RunTest();
+
+        // Static iterface members
+        RepeatSequenceTest.RunTest();
     }
 
     private static void RunTestPart1()
