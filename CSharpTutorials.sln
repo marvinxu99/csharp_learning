@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceStaticMethod", "In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordType", "RecordType\RecordType.csproj", "{9D6F1CFA-D6FC-4B26-9EBE-481CDC19B9DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopLevelStatements", "TopLevelStatements\TopLevelStatements.csproj", "{6E173D66-CCBF-4CE9-BF81-1C56DC18D7D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{9D6F1CFA-D6FC-4B26-9EBE-481CDC19B9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D6F1CFA-D6FC-4B26-9EBE-481CDC19B9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D6F1CFA-D6FC-4B26-9EBE-481CDC19B9DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E173D66-CCBF-4CE9-BF81-1C56DC18D7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E173D66-CCBF-4CE9-BF81-1C56DC18D7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E173D66-CCBF-4CE9-BF81-1C56DC18D7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E173D66-CCBF-4CE9-BF81-1C56DC18D7D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
