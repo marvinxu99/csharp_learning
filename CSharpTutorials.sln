@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopLevelStatements", "TopLe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexesAndRanges", "IndexesAndRanges\IndexesAndRanges.csproj", "{59551E04-9449-45EA-9786-C8E49A13E37D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableRefTypes", "NullableRefTypes\NullableRefTypes.csproj", "{968CEE3E-F52C-45C9-B61E-AB515C431C7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{59551E04-9449-45EA-9786-C8E49A13E37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59551E04-9449-45EA-9786-C8E49A13E37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59551E04-9449-45EA-9786-C8E49A13E37D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968CEE3E-F52C-45C9-B61E-AB515C431C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968CEE3E-F52C-45C9-B61E-AB515C431C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968CEE3E-F52C-45C9-B61E-AB515C431C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968CEE3E-F52C-45C9-B61E-AB515C431C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
