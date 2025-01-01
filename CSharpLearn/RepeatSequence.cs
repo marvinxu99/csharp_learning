@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members
 //
+// Static Interface Method:
 // The motivating scenario for allowing static methods, including operators, in interfaces is to support
 // generic math algorithms.
 
