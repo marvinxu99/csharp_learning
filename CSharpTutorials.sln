@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternMatchingTest", "Patt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringInterpolationTest", "StringInterpolationTest\StringInterpolationTest.csproj", "{56B5E6A9-40BA-449F-85F8-2201D2025BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleprompterConsole", "TeleprompterConsole\TeleprompterConsole.csproj", "{2A7BFBBC-AFF5-4A42-B691-8C8A1EF74CA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{56B5E6A9-40BA-449F-85F8-2201D2025BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56B5E6A9-40BA-449F-85F8-2201D2025BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56B5E6A9-40BA-449F-85F8-2201D2025BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7BFBBC-AFF5-4A42-B691-8C8A1EF74CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7BFBBC-AFF5-4A42-B691-8C8A1EF74CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7BFBBC-AFF5-4A42-B691-8C8A1EF74CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7BFBBC-AFF5-4A42-B691-8C8A1EF74CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
