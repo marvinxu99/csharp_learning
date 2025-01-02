@@ -6,28 +6,21 @@ public class Program
     {
         string filePath = "E:\\eDev\\HGW\\csharp\\learning\\TeleprompterConsole\\sampleQuotes.txt";
 
-        var cts = new CancellationTokenSource();
-        Console.CancelKeyPress += (s, e) =>
-        {
-            e.Cancel = true;
-            cts.Cancel();
-        };
-        try
-        {
-            await ShowTeleprompter(filePath, cts.Token);
-        }
-        catch (OperationCanceledException)
-        {
-            Console.WriteLine("\nTeleprompter canceled.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-        }
-
+        await RunTeleprompter(filePath);
     }
 
-    private static async Task ShowTeleprompter(string filePath, CancellationToken token, int delay = 200, int lineWidth = 70)
+    private static async Task RunTeleprompter(string filePath)
+    {
+        var config = new TelePrompterConfig();
+
+        var displayTask = ShowTeleprompter(config, filePath);
+
+        var speedTask = GetInput(config);
+
+        await Task.WhenAny(displayTask, speedTask);
+    }
+
+    private static async Task ShowTeleprompter(TelePrompterConfig config, string filePath, int lineWidth = 70)
     {
         if (!File.Exists(filePath))
         {
@@ -38,13 +31,13 @@ public class Program
         var words = ReadFrom(filePath, lineWidth);
         foreach (var word in words)
         {
-            token.ThrowIfCancellationRequested();
             Console.Write(word);
             if (!string.IsNullOrWhiteSpace(word))
             {
-                await Task.Delay(delay, token);
+                await Task.Delay(config.DelayInMilliseconds);
             }
         }
+        config.SetDone();
     }
 
     static IEnumerable<string> ReadFrom(string file, int lineWidth)
@@ -70,5 +63,29 @@ public class Program
             yield return Environment.NewLine;
         }
 
+    }
+
+    private static async Task GetInput(TelePrompterConfig config)
+    {
+        Action work = () =>
+        {
+            do
+            {
+                var key = Console.ReadKey(true);
+                if (key.KeyChar == '>')
+                {
+                    config.UpdateDelay(-100);
+                }
+                else if (key.KeyChar == '<')
+                {
+                    config.UpdateDelay(100);
+                }
+                else if (key.KeyChar == 'X' || key.KeyChar == 'x')
+                {
+                    config.SetDone();
+                }
+            } while (!config.Done);
+        };
+        await Task.Run(work);
     }
 }
