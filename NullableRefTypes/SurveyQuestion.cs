@@ -1,6 +1,5 @@
 ﻿namespace NullableRefTypes;
 
-
 public enum QuestionType
 {
     YesNo,

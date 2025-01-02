@@ -2,13 +2,12 @@
 
 public class SurveyResponse(int id)
 {
-    public int Id { get; } = id;
-    private Dictionary<int, string>? surveyResponses;
-
     private static readonly Random randomGenerator = new();
-
     public static SurveyResponse GetRandomId() => new(randomGenerator.Next());
 
+    public int Id { get; } = id;
+
+    private Dictionary<int, string>? surveyResponses;
 
     public bool AnswerSurvey(IEnumerable<SurveyQuestion> questions)
     {
