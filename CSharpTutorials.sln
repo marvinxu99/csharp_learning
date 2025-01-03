@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleprompterConsole", "Tele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIClient", "WebAPIClient\WebAPIClient.csproj", "{AEFC8DEE-FDE1-45B8-AD79-9BBC5749A518}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLINQ", "ConsoleLINQ\ConsoleLINQ.csproj", "{103C05CA-E5B4-463F-815C-0838342559BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{AEFC8DEE-FDE1-45B8-AD79-9BBC5749A518}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEFC8DEE-FDE1-45B8-AD79-9BBC5749A518}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEFC8DEE-FDE1-45B8-AD79-9BBC5749A518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{103C05CA-E5B4-463F-815C-0838342559BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103C05CA-E5B4-463F-815C-0838342559BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103C05CA-E5B4-463F-815C-0838342559BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103C05CA-E5B4-463F-815C-0838342559BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
