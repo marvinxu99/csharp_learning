@@ -38,7 +38,93 @@ internal class QueryExpressionBasics
             Console.WriteLine(city);
         }
 
+        // Grouping example
+        Console.WriteLine("\n----Grouping by first letter of country name----");
+        var queryCountryGroups =
+            from country in countries
+            group country by country.Name[0] into countryGroup
+            orderby countryGroup.Key
+            select countryGroup;
 
+        foreach (var group in queryCountryGroups)
+        {
+            Console.WriteLine($"Countries starting with '{group.Key}':");
+            foreach (var country in group)
+            {
+                Console.WriteLine($"  {country.Name}");
+            }
+        }
+
+        Console.WriteLine("\n----Grouping by first letter of country name----");
+        var queryCountryGroups2 =
+            from country in countries
+            group country by country.Name[0];
+
+        foreach (var group in queryCountryGroups2)
+        {
+            Console.WriteLine($"Countries starting with '{group.Key}':");
+            foreach (var country in group)
+            {
+                Console.WriteLine($"  {country.Name}");
+            }
+
+        }
+
+        // select clause
+        Console.WriteLine("select clause projects a sequence of anonymous types:");
+        var queryNameAndPop =
+            from country in countries
+            select new
+            {
+                Name = country.Name,
+                Pop = country.Population
+            };
+        foreach (var country in queryNameAndPop)
+        {
+            Console.WriteLine(country.ToString());
+        }
+
+        // percentileQuery is an IEnumerable<IGrouping<int, Country>>
+        Console.WriteLine("---Continuation with 'into':");
+        var percentileQuery =
+            from country in countries
+            let percentile = (int)country.Population / 1000
+            group country by percentile into countryGroup
+            where countryGroup.Key >= 20
+            orderby countryGroup.Key
+            select countryGroup;
+
+        // grouping is an IGrouping<int, Country>
+        foreach (var group in percentileQuery)
+        {
+            Console.WriteLine($"Group {group.Key}:");
+            foreach (var country in group)
+            {
+                Console.WriteLine(country.Name + ":" + country.Population);
+            }
+        }
+
+        // Filtering, ordering, and joining
+        var querySortedCountries =
+            from country in countries
+            orderby country.Area ascending, country.Population descending
+            select country;
+
+
+        // let clause
+        string[] names = ["Svetlana Omelchenko", "Claire O'Donnell", "Sven Mortensen", "Cesar Garcia"];
+
+        IEnumerable<string> queryFirstNames =
+            from name in names
+            let firstName = name.Split(' ')[0]
+            select firstName;
+
+        foreach (var s in queryFirstNames)
+        {
+            Console.Write(s + " ");
+        }
+
+        //Output: Svetlana Claire Sven Cesar
     }
 
     static readonly City[] cities = [

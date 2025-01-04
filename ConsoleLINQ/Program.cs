@@ -8,6 +8,14 @@ internal class Program
 
         // IntroLINQ.RunTest();
 
-        QueryExpressionBasics.RunTest();
+        //QueryExpressionBasics.RunTest();
+
+        // JoinDemo.RunTest();
+
+        // LINQ Queries
+        //LINQQueries.RunTest();
+
+        // Method Syntax
+        MethodSyntax.RunTest();
     }
 }
