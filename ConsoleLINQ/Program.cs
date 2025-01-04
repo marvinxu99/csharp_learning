@@ -16,6 +16,9 @@ internal class Program
         //LINQQueries.RunTest();
 
         // Method Syntax
-        MethodSyntax.RunTest();
+        //MethodSyntax.RunTest();
+
+        // LINQ Queries walkthrough
+        LINQQueryWalkthrough.RunTest();
     }
 }
