@@ -12,15 +12,79 @@ internal class LINQQueryWalkthrough
     {
         // Create the query.
         // The first line could also be written as "var studentQuery ="
-        IEnumerable<Student> studentQuery =
-            from student in students
-            where student.Scores[0] > 90
-            select student;
+        //IEnumerable<Student> studentQuery =
+        //    from student in students
+        //    where student.Scores[0] > 90
+        //    select student;
 
-        foreach (Student student in studentQuery)
+        var studentQuery =
+            from student in students
+            where student.Scores.Min() >= 80
+            let average = student.Scores.Average()
+            orderby average
+            select new
+            {
+                student.Last,
+                student.ID,
+                Average = average,
+                Min = student.Scores.Min(),
+                Max = student.Scores.Max()
+            };
+
+        foreach (var student in studentQuery)
         {
             Console.WriteLine(student.ToString());
         }
+
+        // Group the results
+        IEnumerable<IGrouping<char, Student>> studentGroupQuery =
+            from student in students
+            group student by student.Last[0];
+
+        foreach (IGrouping<char, Student> studentGroup in studentGroupQuery)
+        {
+            Console.WriteLine(studentGroup.Key);
+            foreach (Student student in studentGroup)
+            {
+                Console.WriteLine($"   {student.Last}, {student.First}");
+            }
+        }
+
+        // Order the groups by their key value
+        Console.WriteLine();
+        var studentQuery4 =
+            from student in students
+            group student by student.Last[0] into studentGroup
+            orderby studentGroup.Key
+            select studentGroup;
+
+        foreach (var groupOfStudents in studentQuery4)
+        {
+            Console.WriteLine(groupOfStudents.Key);
+            foreach (var student in groupOfStudents)
+            {
+                Console.WriteLine($"   {student.Last}, {student.First}");
+            }
+        }
+
+        // This query returns those students whose
+        // first test score was higher than their
+        // average score.
+        var studentQuery5 =
+            from student in students
+            let totalScore = student.Scores[0] + student.Scores[1] +
+                student.Scores[2] + student.Scores[3]
+            where totalScore / 4 < student.Scores[0]
+            select $"{student.Last}, {student.First}";
+
+        foreach (string s in studentQuery5)
+        {
+            Console.WriteLine(s);
+        }
+
+        Console.WriteLine();
+
+
     }
 
     // Create a data source by using a collection initializer.
