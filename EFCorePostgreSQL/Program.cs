@@ -29,9 +29,9 @@ internal class Program
         }
 
         // Filterimg
-        var expensiveProducts = context.Products.
+        var expensiveProducts = await context.Products.
             Where(p => p.Price > 1000)
-            .ToList();
+            .ToListAsync();
         foreach (var product in expensiveProducts)
         {
             Console.WriteLine($"{product.Id} - {product.Name}: {product.Price:C} (Stock: {product.Stock})");
@@ -45,5 +45,83 @@ internal class Program
         {
             Console.WriteLine($"{name}");
         }
+
+        // Update data
+        /*
+        var prod = context.Products.FirstOrDefault(p => p.Name == "Laptop");
+        if (prod != null)
+        {
+            prod.Stock -= 1; // Reduce stock
+            context.SaveChanges();
+        }
+        */
+
+        // Delete data
+        /*
+        var prodToRemove = context.Products.FirstOrDefault(p => p.Name == "Laptop");
+        if (prodToRemove != null)
+        {
+            context.Products.Remove(prodToRemove);
+            context.SaveChanges();
+        }
+        */
+
+        // Group By
+        var groupedProducts = context.Products
+            .GroupBy(p => p.Stock)
+            .Select(g => new
+            {
+                StockLevel = g.Key,
+                Products = g.ToList()
+            })
+            .ToList();
+
+        foreach (var items in groupedProducts)
+        {
+            Console.WriteLine($"{items.StockLevel}");
+            foreach (var item in items.Products)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+        }
+
+        // Joins
+        // Add Categories
+        /*
+        var electronics = new Category { Name = "Electronics" };
+        var furniture = new Category { Name = "Furniture" };
+        context.Categories.AddRange(electronics, furniture);
+        context.SaveChanges();
+
+        // Add Products
+        context.Products.Add(new Product { Name = "Laptop", Price = 1200.50M, Stock = 10, CategoryId = electronics.Id });
+        context.Products.Add(new Product { Name = "Sofa", Price = 800.00M, Stock = 5, CategoryId = furniture.Id });
+        context.SaveChanges();
+        */
+        var productsWithCategories = await context.Products
+            .Include(p => p.Category)
+            .Select(p => new
+            {
+                ProductName = p.Name,
+                CategoryName = p.Category.Name
+            })
+            .ToListAsync();
+
+        foreach (var item in productsWithCategories)
+        {
+            Console.WriteLine($"{item.ProductName} - {item.CategoryName}");
+        }
+
+        // Pagination
+        // Fetch records in chunks:
+        int pageNumber = 1;
+        int pageSize = 10;
+
+        var paginatedProducts = await context.Products
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
     }
 }
