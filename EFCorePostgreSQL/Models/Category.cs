@@ -1,4 +1,4 @@
-﻿namespace EFCorePostgreSQL;
+﻿namespace EFCorePostgreSQL.Models;
 
 internal class Category
 {

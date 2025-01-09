@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EFCorePostgreSQL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCorePostgreSQL;
 
