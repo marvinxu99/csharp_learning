@@ -76,7 +76,7 @@ internal class Program
         {
             Console.WriteLine(s);
         }
-        // The equivalent method approach
+        // Method approach
         List<string> phrases2 = ["an apple a day", "the quick brown fox"];
         var query2 = phrases2.SelectMany(phrase => phrase.Split(' '));
         foreach (string s in query2)
@@ -118,17 +118,85 @@ internal class Program
             Console.WriteLine(
                 $"Number: {number} is zipped with letter: '{letter}' and emoji: {em}");
         }
+
+        // Use the Enumerable.Zip<TFirst,TSecond,TThird>(IEnumerable<TFirst>, IEnumerable<TSecond>, IEnumerable<TThird>) 
         var zipped2 = numbers.Zip(letters, emoji);
         foreach (var item in zipped2)
         {
             Console.WriteLine(item);
         }
 
+        // Zip - The third overload accepts a Func<TFirst, TSecond, TResult> argument that acts as a results selector
+        foreach (string rslt in
+            numbers.Zip(letters, (number, letter) => $"{number} = {letter} ({(int)letter})"))
+        {
+            Console.WriteLine(rslt);
+        }
+
         /////////////////////////////////////
         // Let clause example
         //LetSample1.RunTest();
 
+        ////////////////////////////////////
+        // Select Vs SelectMany
+        //SelectVsSelectMany.RunTest();
 
+        ////////////////////////////////////
+        // https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/set-operations
+        // Set Operations: Distinct/DistinctBy, Except/ExceptBy, Intersect/IntersectBy, Union/UnionBy
+
+        ///////////////////////////////////
+        // Sort Data - https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/sorting-data
+        // OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse
+
+        ////////////////////////////////////
+        // Quantifier operations - https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/quantifier-operations
+        // All, Any, Contains
+        //QuantifierOperations.RunTest();
+
+
+        //////////////////////////////////////////
+        // Partitioning data - Dividing an input sequence into two sections, without rearranging the elements,
+        // and then returning one of the sections.
+        // Skip, SkipWhile, Take. TakeWhile, Chunk
+        foreach (int number in Enumerable.Range(0, 8).Take(3))
+        {
+            Console.Write($"{number} ");
+        }
+        Console.WriteLine();
+
+        foreach (int number in Enumerable.Range(0, 8).Skip(3))
+        {
+            Console.Write($"{number} ");
+        }
+        Console.WriteLine();
+
+        foreach (int number in Enumerable.Range(0, 8).TakeWhile(n => n < 5))
+        {
+            Console.Write($"{number} ");
+        }
+        Console.WriteLine();
+
+        /////////////////////////////////////////////////
+        // Converting data types
+        // AsEnumerable, AsQuerable, Cast, OfType, ToArray, ToDictionary, ToList, ToLookup
+        IEnumerable<Student> people = students;
+
+        var query3 = from Student student in students
+                     where student.Year == GradeLevel.ThirdYear
+                     select student;
+
+        var query4 = people
+            .Cast<Student>()
+            .Where(student => student.Year == GradeLevel.ThirdYear);
+
+        foreach (Student student in query3)
+        {
+            Console.WriteLine(student.FirstName);
+        }
+
+        // Join Examples
+        JoinExamples.RunTest();
 
     }
 }
