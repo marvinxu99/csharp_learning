@@ -88,7 +88,7 @@ internal class LINQQueryWalkthrough
     }
 
     // Create a data source by using a collection initializer.
-    static IEnumerable<Student> students =
+    static readonly IEnumerable<Student> students =
     [
         new Student(First: "Svetlana", Last: "Omelchenko", ID: 111, Scores: [97, 92, 81, 60]),
         new Student(First: "Claire",   Last: "O'Donnell",  ID: 112, Scores: [75, 84, 91, 39]),

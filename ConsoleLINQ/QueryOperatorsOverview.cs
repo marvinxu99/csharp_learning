@@ -2,6 +2,10 @@
 
 namespace ConsoleLINQ;
 
+/****
+ *  Please refer to the StandardQueryOperators project
+ */
+
 internal class QueryOperatorsOverview
 {
     internal static void RunTest()

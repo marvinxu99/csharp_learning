@@ -1,15 +1,16 @@
-﻿namespace FileOpExamples
+﻿namespace FileOpExamples;
+
+internal class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            FileUsingStatementExample.RunTest();
+        //FileUsingStatementExample.RunTest();
 
-            var filePath = @"E:\eDev\HGW\csharp\learning\FileOpExamples\numbers.txt";
-            var numbers = FileUsingStatementExample.LoadNumbers(filePath);
-            Console.WriteLine(string.Join(", ", numbers));
+        //var filePath = @"E:\eDev\HGW\csharp\learning\FileOpExamples\numbers.txt";
+        //var numbers = FileUsingStatementExample.LoadNumbers(filePath);
+        //Console.WriteLine(string.Join(", ", numbers));
 
-        }
+        FileInfoTest.RunTest();
+
     }
 }

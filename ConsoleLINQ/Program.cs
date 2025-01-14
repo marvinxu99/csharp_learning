@@ -1,4 +1,6 @@
-﻿namespace ConsoleLINQ;
+﻿// https://learn.microsoft.com/en-us/dotnet/csharp/linq/how-to-query-files-and-directories
+
+namespace ConsoleLINQ;
 
 internal class Program
 {
@@ -22,6 +24,16 @@ internal class Program
         // LINQQueryWalkthrough.RunTest();
 
         // Standard Query Operators Overview
-        QueryOperatorsOverview.RunTest();
+        //QueryOperatorsOverview.RunTest();
+
+        // How to: Use LINQ to query files and directories
+        //QueryFiles.RunTest();
+
+        // QueryTextFileContent.RunTest();
+
+        //CompareDirectoriesTest.CompareDirectories();
+
+        CsvReorderFields.RunTest();
+
     }
 }

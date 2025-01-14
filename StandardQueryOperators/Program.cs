@@ -195,8 +195,15 @@ internal class Program
             Console.WriteLine(student.FirstName);
         }
 
+        ////////////////////////////////////////////////////
         // Join Examples
         JoinExamples.RunTest();
+
+        ////////////////////////////////////////////////////
+        // Group Data
+        // GroupBy, ToLookup
+        GroupData.RunTest();
+
 
     }
 }

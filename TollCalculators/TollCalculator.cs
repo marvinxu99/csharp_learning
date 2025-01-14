@@ -31,6 +31,7 @@ public static class TollCalculator
             //Taxi { Fares: 0 } => TaxiFare,
             //Taxi { Fares: 0 } => TaxiFare - 0.5m,
             //Taxi => TaxiFare - 1.0m,
+
             Car c => c.Passengers switch
             {
                 0 => CarFare + 0.5m,

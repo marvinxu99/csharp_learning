@@ -11,19 +11,17 @@ public class FileUsingStatementExample
 
         try
         {
-            using (StreamReader reader = File.OpenText(filePath))
+            using StreamReader reader = File.OpenText(filePath);
+            string? line;
+            while ((line = reader.ReadLine()) is not null)
             {
-                string? line;
-                while ((line = reader.ReadLine()) is not null)
+                if (int.TryParse(line, out int number))
                 {
-                    if (int.TryParse(line, out int number))
-                    {
-                        numbers.Add(number);
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Skipping invalid line: {line}");
-                    }
+                    numbers.Add(number);
+                }
+                else
+                {
+                    Console.WriteLine($"Skipping invalid line: {line}");
                 }
             }
         }
