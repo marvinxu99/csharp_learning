@@ -35,6 +35,10 @@ internal class Program
 
         // CsvReorderFields.RunTest();
 
-        SplitToManyFiles.RunTest();
+        //SplitToManyFiles.RunTest();
+
+        // CsvJoinFiles.RunTest();
+
+        CsvSumColumns.SumColumns();
     }
 }
