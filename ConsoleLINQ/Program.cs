@@ -33,7 +33,8 @@ internal class Program
 
         //CompareDirectoriesTest.CompareDirectories();
 
-        CsvReorderFields.RunTest();
+        // CsvReorderFields.RunTest();
 
+        SplitToManyFiles.RunTest();
     }
 }
